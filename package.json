@@ -32,5 +32,13 @@
   "devDependencies": {
     "axios": "^0.19.2",
     "nodemon": "^2.0.13"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinnieterlouw/portfolio-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vinnieterlouw/portfolio-backend/issues"
+  },
+  "homepage": "https://github.com/vinnieterlouw/portfolio-backend#readme"
 }
