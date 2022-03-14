@@ -61,4 +61,20 @@ router.patch("/editbalance/:id", authMiddleware, async (req, res) => {
   }
 });
 
+router.delete("/delete/:userId", async (req, res, next) => {
+  try {
+    const { userId } = req.params;
+    const expenses = await Expense.findAll({ where: { userId: userId } });
+    if (!expenses) {
+      return res.status(404).send("Expenses not found");
+    }
+
+    await expenses.forEach((expense) => expense.destroy());
+
+    res.send({ message: "Delete succes", userId });
+  } catch (e) {
+    next(e);
+  }
+});
+
 module.exports = router;
